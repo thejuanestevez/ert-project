@@ -1,0 +1,1 @@
+The interactive fence diagram is intended to provide spatial context between independent 2D ERT sections. It is not a 3D resistivity inversion and should not be interpreted as a continuous 3D subsurface model.

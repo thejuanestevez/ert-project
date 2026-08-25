@@ -1,17 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "ert-project"
+name = "ert-visualization"
 version = "0.1.0"
-requires-python = ">=3.13"
+description = "Python tools for visualization of electrical resistivity tomography inversion results."
+requires-python = ">=3.11"
+
 dependencies = [
-    "matplotlib>=3.11.1",
-    "numpy>=2.5.2",
-    "pandas>=3.0.5",
-    "scipy>=1.18.1",
+    "numpy",
+    "pandas",
+    "scipy",
+    "matplotlib",
+    "plotly",
 ]
 
-[dependency-groups]
-dev = [
-    "ipykernel>=7.3.0",
-    "pytest>=9.1.1",
-    "ruff>=0.16.4",
-]
+[tool.setuptools.packages.find]
+where = ["src"]
