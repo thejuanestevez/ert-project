@@ -6,6 +6,7 @@ import pandas as pd
 from matplotlib.axes import Axes
 from matplotlib.colors import LogNorm
 from matplotlib.figure import Figure
+from typing import Literal
 
 from ert_visualization.processing import interpolate_ert_grid
 
@@ -18,6 +19,7 @@ def plot_ert_section(
         cmap: str = "viridis",
         nx: int = 400,
         nz: int = 200,
+        interpolation_space: Literal["linear", "log10"] = "log10",
 ) -> tuple[Figure, Axes, object]:
     """
     Plot a 2-D ERT inversion secion in depth cooridnates.
@@ -70,7 +72,7 @@ def plot_ert_section(
         vertical_column="depth_positive_m",
         nx=nx,
         nz=nz,
-        log_resistivity=False,
+        interpolation_space=interpolation_space,
     )
 
     resistivity_grid = np.ma.masked_invalid(RHOI)
@@ -115,6 +117,7 @@ def plot_ert_comparison(
         vmin: float = 1.0,
         vmax: float = 10000.0,
         cmap: str = "viridis",
+        interpolation_space: str = "linear",
 ) -> Figure:
     """
     Plot the four ERT inversion datasets using a shared log color scale
@@ -174,6 +177,7 @@ def plot_ert_comparison(
             vmin=vmin,
             vmax=vmax,
             cmap=cmap,
+            interpolation_space=interpolation_space,
         )
 
     colorbar = fig.colorbar(

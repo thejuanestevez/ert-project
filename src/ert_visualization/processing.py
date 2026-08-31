@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.interpolate 
 from scipy.interpolate import griddata
+from typing import Literal
 
 def validate_topography_coverage(
         ert_df: pd.DataFrame,
@@ -105,7 +106,7 @@ def interpolate_ert_grid(
         vertical_column: str = "depth_positive_m",
         nx: int = 400,
         nz: int = 200,
-        log_resistivity: bool = False,
+        interpolation_space: Literal["linear", "log10"] = "log10",
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
     """
@@ -173,11 +174,17 @@ def interpolate_ert_grid(
     z = data[vertical_column].to_numpy()
     resistivity = data["resistivity_ohm_m"].to_numpy()
 
-    if log_resistivity:
+    if interpolation_space == "linear":
+        values = resistivity
+
+    elif interpolation_space == "log10":
         values = np.log10(resistivity)
     
     else:
-        values = resistivity 
+        raise ValueError(
+            "interpolation_space must be either "
+            "'linear' or 'log10' ."
+        )
 
     xi = np.linspace(
         x.min(),
@@ -202,5 +209,8 @@ def interpolate_ert_grid(
         xi=(XI, ZI),
         method="linear",
     )
+
+    if interpolation_space == "log10":
+        RHOI = 10 ** RHOI
 
     return XI, ZI, RHOI
