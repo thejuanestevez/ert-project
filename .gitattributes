@@ -1,0 +1,2 @@
+# Preserve raw RES2DINV exports exactly as provided.
+data/raw/*.xyz binary

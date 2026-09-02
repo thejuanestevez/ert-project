@@ -23,14 +23,5 @@ Thumbs.db
 .env.*
 !.env.example
 
-# Large/local research data
-data/raw/*
-data/processed/*
-
-# Keep folders present
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Temporary outputs
-outputs/temp/
+# Logs
 *.log

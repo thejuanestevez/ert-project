@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ert-visualization"
 version = "0.1.0"
 description = "Python tools for visualization of electrical resistivity tomography inversion results."
+readme = "README.md"
 requires-python = ">=3.11"
 
 dependencies = [

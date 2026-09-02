@@ -61,7 +61,7 @@ The four inversion models are displayed using a common logarithmic
 resistivity scale so that differences between survey days and electrode
 arrays can be compared directly.
 
-![ERT inversion comparison](figures/ert_comparison.png)
+![ERT inversion comparison](figures/ert_inversion_comparison.png)
 
 ### Topography-Corrected ERT Sections
 
