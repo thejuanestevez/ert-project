@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Electrical Resistivity Tomography Visualization</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 24px;
+            line-height: 1.6;
+            color: #222;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        a {
+            color: #0969da;
+        }
+
+        .note {
+            margin-top: 40px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Electrical Resistivity Tomography Visualization</h1>
+
+    <p class="subtitle">
+        Interactive visualization of 2-D ERT inversion results from
+        approximately perpendicular geophysical survey lines.
+    </p>
+
+    <div class="card">
+        <h2>Wenner Array</h2>
+
+        <p>
+            Explore the Day 1 and Day 2 Wenner inversion models as an
+            interactive pseudo-3D fence diagram.
+        </p>
+
+        <a href="interactive/ert_wenner_fence_diagram.html">
+            Open Wenner fence diagram
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Dipole-Dipole Array</h2>
+
+        <p>
+            Explore the Day 1 and Day 2 dipole-dipole inversion models as
+            an interactive pseudo-3D fence diagram.
+        </p>
+
+        <a href="interactive/ert_dipole_dipole_fence_diagram.html">
+            Open dipole-dipole fence diagram
+        </a>
+    </div>
+
+    <p class="note">
+        These visualizations combine independent 2-D ERT inversions and
+        should not be interpreted as true 3-D resistivity inversions.
+        The profile intersection shown in the diagrams is schematic.
+    </p>
+
+</body>
+</html>
