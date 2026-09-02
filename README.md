@@ -13,6 +13,9 @@ The project includes four ERT inversion models collected along two
 approximately perpendicular survey lines using Wenner and dipole-dipole
 arrays.
 
+**Interactive project site:**  
+https://thejuanestevez.github.io/ert-project/
+
 ## Project Overview
 
 Electrical Resistivity Tomography is a geophysical method used to investigate
@@ -81,8 +84,8 @@ sections.
 
 Two interactive fence diagrams are included:
 
-- [Wenner pseudo-3D fence diagram](interactive/ert_wenner_fence_diagram.html)
-- [Dipole-dipole pseudo-3D fence diagram](interactive/ert_dipole_dipole_fence_diagram.html)
+- [Open the interactive Wenner fence diagram](https://thejuanestevez.github.io/ert-project/interactive/ert_wenner_fence_diagram.html)
+- [Open the interactive dipole-dipole fence diagram](https://thejuanestevez.github.io/ert-project/interactive/ert_dipole_dipole_fence_diagram.html)
 
 The Plotly figures can be rotated, zoomed, and inspected interactively.
 Hovering over the ERT sections displays profile distance, elevation, and
