@@ -98,6 +98,7 @@ def make_ert_fence_diagram(
     day2_elevation: pd.DataFrame,
     day1_intersection_m: float | None = None,
     day2_intersection_m: float | None = None,
+    array_name: str = "Wenner",
     vmin: float = 0.1,
     vmax: float = 10000.0,
     nx: int = 350,
@@ -260,9 +261,9 @@ def make_ert_fence_diagram(
                 "ticktext": decade_lables, 
             },
             customdata = RHO1,
-            name = "Wenner Day 1",
+            name = f"{array_name} Day 1",
             hovertemplate = (
-                "Day 1<br>"
+                f"{array_name} Day 1<br>"
                 "Relative distance: %{x:.1f} m<br>"
                 "Elevation: %{z:.1f} m<br>"
                 "Resistivity: %{customdata:,.1f} Ω·m"
@@ -286,9 +287,9 @@ def make_ert_fence_diagram(
             cmax = log_max,
             showscale = False,
             customdata = RHO2,
-            name = "Wenner Day 2",
+            name = f"{array_name} Day 2",
             hovertemplate = (
-                "Day 2<br>"
+                f"{array_name} Day 2<br>"
                 "Relative distance: %{y:.1f} m<br>"
                 "Elevation: %{z:.1f} m<br>"
                 "Resistivity: %{customdata:,.1f} Ω·m"
@@ -342,13 +343,13 @@ def make_ert_fence_diagram(
     if schematic:
         title = (
             "Schematic Pseudo-3D ERT Fence Diagram "
-            "(Wenner Arrays)"
+            f"({array_name} Array)"
         )
 
     else:
         title = (
             "Pseudo-3D ERT Fence Diagram "
-            "(Wenner Arrays)"
+            f"({array_name} Array)"
         )
 
     fig.update_layout(

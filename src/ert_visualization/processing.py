@@ -214,3 +214,33 @@ def interpolate_ert_grid(
         RHOI = 10 ** RHOI
 
     return XI, ZI, RHOI
+
+def crop_model_to_topography(
+    ert_df: pd.DataFrame,
+    elevation_df: pd.DataFrame,
+) -> pd.DataFrame:
+    """
+    Crop an ERT inversion model to the horizontal extent covered
+    by measured electrode elevations.
+
+    Model blocks outside the measured survey-line footprint are
+    excluded rather than extrapolating the topography.
+    """
+
+    minimum_x = elevation_df["x_m"].min()
+    maximum_x = elevation_df["x_m"].max()
+
+    cropped = ert_df.loc[
+        ert_df["x_m"].between(
+            minimum_x,
+            maximum_x,
+        )
+    ].copy()
+
+    if cropped.empty:
+        raise ValueError(
+            "No ERT model blocks fall within the "
+            "measured topography extent."
+        )
+
+    return cropped
